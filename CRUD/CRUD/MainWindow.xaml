@@ -1,0 +1,47 @@
+﻿<Window x:Class="MySQL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MySQL"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        Title="Estudiantes" Height="280" Width="489.638" Background="LightGreen">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center">
+            <Label HorizontalAlignment="Center" Content="Datos"/>
+            <WrapPanel Margin="0,3">
+                <TextBlock>Nombre(s):</TextBlock>
+                <TextBox Name="Nom" Width="190" Background="#FFF1F1F1" Margin="21,0"/>
+            </WrapPanel>
+            <WrapPanel Margin="0,3">
+                <TextBlock>Apellidos:</TextBlock>
+                <TextBox Name="Apellidos" Width="190" Background="#FFF1F1F1" Margin="28,0"/>
+            </WrapPanel>
+            <WrapPanel Margin="0,3">
+                <TextBlock><Run Text="Telefono:"/></TextBlock>
+                <TextBox x:Name="Telefono" Width="80" Background="#FFF1F1F1" Margin="32,0"/>
+            </WrapPanel>
+            <WrapPanel HorizontalAlignment="Right">
+                <Button Width="70" Content="Registrarse" Name="BtnN" Margin="0,10,30,10" Click="BtnN_Click"/>
+            </WrapPanel>
+        </StackPanel>
+        <DataGrid Margin="10,128,10,41" AutoGenerateColumns="True" Name="dgrid" ItemsSource="{Binding}"/>
+        <StackPanel Name="SPEdit" Margin="0,100" HorizontalAlignment="Center" Visibility="Hidden">
+            <WrapPanel Margin="-143,0">
+                <TextBlock>ID:</TextBlock>
+                <TextBox Name="id" Width="20" Background="#FFF1F1F1" Margin="53,0"/>
+            </WrapPanel>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10">
+            <WrapPanel>
+                <Button Width="70" Name="BUpdate" Content="Actualizar" Margin="5,8" Click="BUpdate_Click" Visibility="Collapsed"/>
+                <Button Width="50" Name="BCan"  Content="Cancelar" Margin="5,8" Click="BCan_Click"/>
+                <Button Width="40" Name="BEdit" Content="Editar" Margin="5,8" Click="BEdit_Click"/>
+                <Button Width="50" Name="BDel" Content="Eliminar" Margin="5,8" Click="BDel_Click"/>
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</Window>
+
